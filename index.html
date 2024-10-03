@@ -46,18 +46,6 @@
             margin: 0 auto;
         }
 
-        .heart {
-            font-size: 2.5em;
-            color: #ff6f91;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
         .hidden {
             display: none;
         }
@@ -66,19 +54,38 @@
 <body>
 
     <div id="page1" class="card">
+        <h1>Hai sayang!</h1>
+        <p>Ini hadiah Spesial yang aku persiapkan buat ayy. Susah banget loh bikinnyaa tapi akhirnya selesai juga.</p>
+        <button id="nextButton" class="button">Lanjut Yuk!</button>
+    </div>
+
+    <div id="page2" class="card hidden">
         <h1>Selamat Ulang Tahun, Cintaku! ❤️</h1>
         <p>Sebelum buka kadonya, nikmati perjalanan kita berdua dalam video singkat ini dulu yaa ❤️🎥.</p>
-        <video controls style="width: 100%; border-radius: 15px;">
+        <video id="videoPlayer" controls style="width: 100%; border-radius: 15px;">
             <source src="video-perjalanan.mp4" type="video/mp4">
             Browser kamu tidak mendukung video ini.
         </video>
+        <p>I will always be there for you, forever. 💖</p>
         <p class="heart">💓💓💓</p>
-        <button id="playVideoButton" class="button">Lihat Canva Presentasi</button>
+        <button id="openCanvaButton" class="button hidden">Lihat Presentasi di Canva</button>
     </div>
 
     <script>
-        document.getElementById("playVideoButton").addEventListener("click", function() {
-            window.location.href = "https://www.canva.com/design/DAGSbb30Dv8/DoMu9cDiTFAgVimH0SvRAA/watch?utm_content=DAGSbb30Dv8&utm_campaign=designshare&utm_medium=link&utm_source=editor";
+        // Button for page 1 to proceed to page 2
+        document.getElementById("nextButton").addEventListener("click", function() {
+            document.getElementById("page1").classList.add("hidden");
+            document.getElementById("page2").classList.remove("hidden");
+        });
+
+        // Show the Canva button after video ends
+        document.getElementById("videoPlayer").addEventListener("ended", function() {
+            document.getElementById("openCanvaButton").classList.remove("hidden");
+        });
+
+        // Open Canva presentation in a new tab when button is clicked
+        document.getElementById("openCanvaButton").addEventListener("click", function() {
+            window.open("https://www.canva.com/design/DAGSbb30Dv8/DoMu9cDiTFAgVimH0SvRAA/watch?utm_content=DAGSbb30Dv8&utm_campaign=designshare&utm_medium=link&utm_source=editor", "_blank");
         });
     </script>
 
