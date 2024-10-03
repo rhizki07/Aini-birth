@@ -61,14 +61,8 @@
 
     <div id="page2" class="card hidden">
         <h1>Selamat Ulang Tahun, Cintaku! ❤️</h1>
-        <p>Sebelum buka kadonya, nikmati perjalanan kita berdua dalam video singkat ini dulu yaa ❤️🎥.</p>
-        <video id="videoPlayer" controls style="width: 100%; border-radius: 15px;">
-            <source src="video-perjalanan.mp4" type="video/mp4">
-            Browser kamu tidak mendukung video ini.
-        </video>
-        <p>I will always be there for you, forever. 💖</p>
-        <p class="heart">💓💓💓</p>
-        <button id="openCanvaButton" class="button hidden">Lihat Presentasi di Canva</button>
+        <p>Sebelum buka kadonya, nikmati perjalanan kita berdua dalam video singkat ini dulu yaa ❤️🎥!</p>
+        <button id="openCanvaButton" class="button">Pencet Aku</button>
     </div>
 
     <script>
@@ -76,11 +70,6 @@
         document.getElementById("nextButton").addEventListener("click", function() {
             document.getElementById("page1").classList.add("hidden");
             document.getElementById("page2").classList.remove("hidden");
-        });
-
-        // Show the Canva button after video ends
-        document.getElementById("videoPlayer").addEventListener("ended", function() {
-            document.getElementById("openCanvaButton").classList.remove("hidden");
         });
 
         // Open Canva presentation in a new tab when button is clicked
