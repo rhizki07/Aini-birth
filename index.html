@@ -6,30 +6,41 @@
     <title>Selamat Ulang Tahun, Cintaku!</title>
     <style>
         body {
-            font-family: 'Cursive', sans-serif;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: 'Great Vibes', cursive;
+            background: url('https://i.imgur.com/yzFSxA9.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
             text-align: center;
             padding: 50px;
         }
 
         h1 {
-            color: #ff6f91;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 5px #f50057;
+            color: #ffdde1;
+            font-size: 3em;
+            text-shadow: 3px 3px 7px #f50057;
             margin-bottom: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        p {
+            font-size: 1.5em;
+            color: #ffe4e1;
+            margin-bottom: 20px;
+            animation: fadeIn 3s ease-in;
         }
 
         .button {
             background-color: #ff6f91;
             color: white;
             padding: 15px 30px;
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin-top: 30px;
             text-decoration: none;
             border-radius: 30px;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            animation: pulse 2s infinite;
         }
 
         .button:hover {
@@ -38,24 +49,43 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             max-width: 700px;
             margin: 0 auto;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .hidden {
             display: none;
         }
+
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div id="page1" class="card">
-        <h1>Hai sayang!</h1>
-        <p>Ini hadiah Spesial yang aku persiapkan buat ayy. Susah banget loh bikinnyaa tapi akhirnya selesai juga.</p>
+        <h1>Hai Sayang!</h1>
+        <p>Ini hadiah Spesial yang aku persiapkan buat ayy. Susah banget loh bikinnyaa, tapi akhirnya selesai juga.</p>
         <button id="nextButton" class="button">Lanjut Yuk!</button>
     </div>
 
