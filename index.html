@@ -66,39 +66,19 @@
 <body>
 
     <div id="page1" class="card">
-        <h1>Diputar lagunya yaa, Ainiku Sayang! 🎶</h1>
-        <button id="playButton" class="button">Putar Lagu 🌹</button>
-        <iframe id="soundcloudPlayer" class="hidden" width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/114666948&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
-        </iframe>
-    </div>
-
-    <div id="page2" class="card hidden">
         <h1>Selamat Ulang Tahun, Cintaku! ❤️</h1>
-        <p> Sebelum buka kadonya, nikmati perjalanan kita berdua dalam video singkat ini dulu yaa ❤️🎥.</p>
-        <!-- Ganti gambar dengan video -->
+        <p>Sebelum buka kadonya, nikmati perjalanan kita berdua dalam video singkat ini dulu yaa ❤️🎥.</p>
         <video controls style="width: 100%; border-radius: 15px;">
             <source src="video-perjalanan.mp4" type="video/mp4">
             Browser kamu tidak mendukung video ini.
         </video>
-        <p>I will always be there for you, forever. 💖</p>
         <p class="heart">💓💓💓</p>
-        <button id="backButton" class="button">Yuk Buka Kadonya</button>
+        <button id="playVideoButton" class="button">Lihat Canva Presentasi</button>
     </div>
 
     <script>
-        document.getElementById("playButton").addEventListener("click", function() {
-            document.getElementById("soundcloudPlayer").style.display = "block"; // Tampilkan player
-            this.style.display = "none"; // Sembunyikan tombol
-            setTimeout(function() { 
-                document.getElementById("page1").classList.add("hidden"); // Sembunyikan halaman 1
-                document.getElementById("page2").classList.remove("hidden"); // Tampilkan halaman 2
-            }, 5000); // Tunggu 5 detik sebelum beralih ke halaman 2
-        });
-
-        document.getElementById("backButton").addEventListener("click", function() {
-            document.getElementById("page2").classList.add("hidden"); // Sembunyikan halaman 2
-            document.getElementById("page1").classList.remove("hidden"); // Tampilkan halaman 1
+        document.getElementById("playVideoButton").addEventListener("click", function() {
+            window.location.href = "https://www.canva.com/design/DAGSbb30Dv8/DoMu9cDiTFAgVimH0SvRAA/watch?utm_content=DAGSbb30Dv8&utm_campaign=designshare&utm_medium=link&utm_source=editor";
         });
     </script>
 
