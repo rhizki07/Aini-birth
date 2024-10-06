@@ -9,6 +9,7 @@
             font-family: 'Great Vibes', cursive;
             background: url('https://raw.githubusercontent.com/rhizki07/Aini-birth/main/Beige%20and%20brown%20aesthetic%20fashion%20facebook%20cover%20(2).png') no-repeat center center fixed;
             background-size: cover;
+            background-attachment: fixed;
             color: #4d4d4d;
             text-align: center;
             padding: 50px;
@@ -20,14 +21,14 @@
             font-size: 3em;
             text-shadow: 2px 2px 5px #ffe4b2;
             margin-bottom: 20px;
-            animation: fadeIn 2s ease-in;
+            animation: fadeInUp 2s ease-out;
         }
 
         p {
             font-size: 1.5em;
             color: #2c2b2d;
             margin-bottom: 20px;
-            animation: fadeIn 3s ease-in;
+            animation: fadeInUp 2.5s ease-out;
             line-height: 1.6;
         }
 
@@ -41,13 +42,19 @@
             border-radius: 30px;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
             animation: pulse 2s infinite;
         }
 
         .button:hover {
             background-color: #6d597a;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .button:focus {
+            outline: 3px solid #ffdfba;
+            transform: scale(1.05);
         }
 
         .card {
@@ -57,23 +64,25 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             max-width: 700px;
             margin: 0 auto;
-            animation: slideIn 1.5s ease-out;
+            animation: fadeInUp 1.5s ease-out;
+            transition: all 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
 
         .hidden {
@@ -113,11 +122,20 @@
     </div>
 
     <script>
+        // Smooth transition between pages
         document.getElementById("nextButton").addEventListener("click", function() {
-            document.getElementById("page1").classList.add("hidden");
-            document.getElementById("page2").classList.remove("hidden");
+            const page1 = document.getElementById("page1");
+            const page2 = document.getElementById("page2");
+
+            page1.style.opacity = "0";
+            setTimeout(() => {
+                page1.classList.add("hidden");
+                page2.classList.remove("hidden");
+                page2.style.opacity = "1";
+            }, 500); // Slight delay for smooth transition
         });
 
+        // Open Canva presentation in a new tab when button is clicked
         document.getElementById("openCanvaButton").addEventListener("click", function() {
             window.open("https://www.canva.com/design/DAGSbb30Dv8/DoMu9cDiTFAgVimH0SvRAA/watch?utm_content=DAGSbb30Dv8&utm_campaign=designshare&utm_medium=link&utm_source=editor", "_blank");
         });
