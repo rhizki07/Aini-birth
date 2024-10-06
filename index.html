@@ -7,26 +7,28 @@
     <style>
         body {
             font-family: 'Great Vibes', cursive;
-            background: url('https://raw.githubusercontent.com/rhizki07/Aini-birth/main/Beige and brown aesthetic fashion facebook cover (2).png') no-repeat center center fixed;
+            background: url('https://raw.githubusercontent.com/rhizki07/Aini-birth/main/Beige%20and%20brown%20aesthetic%20fashion%20facebook%20cover%20(2).png') no-repeat center center fixed;
             background-size: cover;
-            color: #4d4d4d; /* Gunakan warna lebih gelap seperti abu-abu gelap */
+            color: #4d4d4d;
             text-align: center;
             padding: 50px;
+            margin: 0;
         }
 
         h1 {
-            color: #3c3b3f; /* Warna yang lebih gelap untuk kontras */
+            color: #3c3b3f;
             font-size: 3em;
-            text-shadow: 2px 2px 5px #ffe4b2; /* Beri shadow ringan untuk lebih jelas */
+            text-shadow: 2px 2px 5px #ffe4b2;
             margin-bottom: 20px;
             animation: fadeIn 2s ease-in;
         }
 
         p {
             font-size: 1.5em;
-            color: #2c2b2d; /* Lebih gelap agar terlihat di background */
+            color: #2c2b2d;
             margin-bottom: 20px;
             animation: fadeIn 3s ease-in;
+            line-height: 1.6;
         }
 
         .button {
@@ -49,7 +51,7 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.8); /* Lebih terang agar teks lebih mudah dibaca */
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -78,6 +80,21 @@
             display: none;
         }
 
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 1.2em;
+            }
+        }
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
@@ -85,7 +102,7 @@
 
     <div id="page1" class="card">
         <h1>Hai Sayang!</h1>
-        <p>Ucapan spesial ini aku buat khusus untuk My Cutie Puppy. Banyak hal yang harus aku lewati untuk menyelesaikannya, tapi semuanya terbayar karena ini untukmu. Selamat ulang tahun, cintaku!🥳 Semoga hari-harimu ke depan makin indah, dan kita bisa terus menciptakan banyak kenangan bersama. Aku bersyukur bisa ada di sampingmu hari ini</p>
+        <p>Ucapan spesial ini aku buat khusus untuk My Cutie Puppy. Banyak hal yang harus aku lewati untuk menyelesaikannya, tapi semuanya terbayar karena ini untukmu. Selamat ulang tahun, cintaku!🥳 Semoga hari-harimu ke depan makin indah, dan kita bisa terus menciptakan banyak kenangan bersama. Aku bersyukur bisa ada di sampingmu hari ini.</p>
         <button id="nextButton" class="button">Lanjut Yuk!</button>
     </div>
 
@@ -96,13 +113,11 @@
     </div>
 
     <script>
-        // Button for page 1 to proceed to page 2
         document.getElementById("nextButton").addEventListener("click", function() {
             document.getElementById("page1").classList.add("hidden");
             document.getElementById("page2").classList.remove("hidden");
         });
 
-        // Open Canva presentation in a new tab when button is clicked
         document.getElementById("openCanvaButton").addEventListener("click", function() {
             window.open("https://www.canva.com/design/DAGSbb30Dv8/DoMu9cDiTFAgVimH0SvRAA/watch?utm_content=DAGSbb30Dv8&utm_campaign=designshare&utm_medium=link&utm_source=editor", "_blank");
         });
